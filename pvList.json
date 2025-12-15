@@ -1,0 +1,12 @@
+{
+    "start": 64,
+    "offset" : 786432,
+    "ADC": {
+        "regs" : ["CONTROL", "FREV_H", "FREV_L", "HNUM", "IIR_B0", "IIR_B1", "IIR_B2", "IIR_A1", "IIR_A2", "NCO_PHI_OFFSET", "CORDIC_PHI_OFFSET", "GAIN", "MAG_RDBK", "PHI_RDBK"],
+        "count" : 8
+    },
+    "DAC": {
+        "regs" : ["CONTROL", "FREV_H", "FREV_L", "HNUM", "PHI_OFFSET", "MAG", "LOCAL_GAIN"],
+        "count" : 2
+    }
+}
