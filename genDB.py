@@ -18,7 +18,7 @@ for i in range(params["ADC"]["count"]):
 
 record(longout, "{pvReg}"){{
     field(DESC, "TEST")
-    field(DTYP, "PSC Single I32)
+    field(DTYP, "PSC Single I32")
     field(OUT, "@cpc$(NO) 1 {params["offset"] + currentOffset}")
     field(FLNK, "$(P){{CPC:$(NO)}}GoRegSingleWrite1")
 }}
@@ -30,19 +30,24 @@ record(longin, "{pvReg}-I"){{
 }}
         """
         x = (currentOffset-params["start"])*10
+        getWidget = phoebusgen.widget.TextEntry(f"readBack{currentOffset}", pvReg, 160, x, 100, 20)
+        getWidget.format("Hexadecimal")
+        setWidget = phoebusgen.widget.TextUpdate(f'input{currentOffset}', f"{pvReg}-I", 270, x, 100, 20)
+        setWidget.format("Hexadecimal")
         phoebusScreen.add_widget(phoebusgen.widget.Label(f"name{currentOffset}", f"ADC{i}-{param}", 10, x, 150, 20))
-        phoebusScreen.add_widget(phoebusgen.widget.TextUpdate(f"readBack{currentOffset}", pvReg, 160, x, 100, 20))
-        phoebusScreen.add_widget(phoebusgen.widget.TextEntry(f'input{currentOffset}', f"{pvReg}-I", 270, x, 100, 20))
+        phoebusScreen.add_widget(getWidget)
+        phoebusScreen.add_widget(setWidget)
         currentOffset += 4
 
 
 for i in range(params["DAC"]["count"]):
     for param in params["DAC"]["regs"]:
+        pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-DAC_CH{i}-{param}'
         fullDB = f"""{fullDB}
 
 record(longout, "$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-DAC_CH{i}-{param}"){{
     field(DESC, "TEST")
-    field(DTYP, "PSC Single I32)
+    field(DTYP, "PSC Single I32")
     field(OUT, "@cpc$(NO) 1 {params["offset"] + currentOffset}")
     field(FLNK, "$(P){{CPC:$(NO)}}GoRegSingleWrite1")
 }}
@@ -54,9 +59,13 @@ record(longin, "$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-DAC_CH{i}-{param}-I"){{
 }}
         """
         x = (currentOffset-params["start"])*10
+        getWidget = phoebusgen.widget.TextEntry(f"readBack{currentOffset}", pvReg, 160, x, 100, 20)
+        getWidget.format("Hexadecimal")
+        setWidget = phoebusgen.widget.TextUpdate(f'input{currentOffset}', f"{pvReg}-I", 270, x, 100, 20)
+        setWidget.format("Hexadecimal")
         phoebusScreen.add_widget(phoebusgen.widget.Label(f"name{currentOffset}", f"DAC{i}-{param}", 10, x, 150, 20))
-        phoebusScreen.add_widget(phoebusgen.widget.TextUpdate(f"readBack{currentOffset}", pvReg, 160, x, 100, 20))
-        phoebusScreen.add_widget(phoebusgen.widget.TextEntry(f'input{currentOffset}', f"{pvReg}-I", 270, x, 100, 20))
+        phoebusScreen.add_widget(getWidget)
+        phoebusScreen.add_widget(setWidget)
         currentOffset += 4
 
 with open("dbautogen.db", "w") as f:
