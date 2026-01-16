@@ -1,12 +1,69 @@
 {
-    "start": 64,
-    "offset" : 786432,
-    "ADC": {
-        "regs" : ["CONTROL", "FREV_H", "FREV_L", "HNUM", "IIR_B0", "IIR_B1", "IIR_B2", "IIR_A1", "IIR_A2", "NCO_PHI_OFFSET", "CORDIC_PHI_OFFSET", "GAIN", "MAG_RDBK", "PHI_RDBK"],
-        "count" : 8
+    "start_offset" : 786432,
+    "ADC" : {
+        "regs" : [
+            "CONTROL",
+            "FREV_H",
+            "FREV_L",
+            "HNUM",
+            "IIR_B0",
+            "IIR_B1",
+            "IIR_B2",
+            "IIR_A1",
+            "IIR_A2",
+            "NCO_PHI_OFFSET",
+            "CORDIC_PHI_OFFSET",
+            "ADC_GAIN",
+            "MAG_RDBK",
+            "PHI_RDBK"
+        ],
+        "count": 8,
+        "start_offset": 786496
     },
-    "DAC": {
-        "regs" : ["CONTROL", "FREV_H", "FREV_L", "HNUM", "PHI_OFFSET", "MAG", "LOCAL_GAIN"],
-        "count" : 2
+    "DAC" : {
+        "regs" : [
+            "CONTROL",
+            "FREV_H",
+            "FREV_L",
+            "HNUM",
+            "PHI_OFFSET",
+            "LOCAL_GAIN"
+        ],
+        "count": 2,
+        "start_offset": 786944
+    },
+    "FIELD_CONTROLLER":{
+        "regs" : [
+            "LOOP_EN",
+            "IQ_OR_MP",
+            "REF_I",
+            "REF_Q",
+            "REF_M",
+            "REF_P",
+            "PI_KP",
+            "PI_Ki",
+            "PI_INT_MAX_CLAMP",
+            "PI_INT_MIN_CLAMP",
+            "PI_OUT_MAX_CLAMP",
+            "PI_OUT_MIN_CLAMP",
+            "OTFB_OUTPUT_GAIN",
+            "OTFB_BIQUAD_B0",
+            "OTFB_BIQUAD_B1",
+            "OTFB_BIQUAD_A1",
+            "OTFB_BIQUAD_A2",
+            "OTFB_DELAY_DINT",
+            "OTFB_VFD_C0",
+            "OTFB_VFD_C1",
+            "OTFB_VFD_C2",
+            "OTFB_VFD_C3",
+            "OTFB_VFD_C4",
+            "OTFB_PHIEQ_A1",
+            "OTFB_PHIEQ_A2",
+            "OTFB_PHIEQ_DINT",
+            "IQ_WNDCMP_ULIM",
+            "IQ_WNDCMP_LLIM",
+            "REF_SLEW_LIMIT"
+        ],
+        "start_offset": 787072
     }
 }
