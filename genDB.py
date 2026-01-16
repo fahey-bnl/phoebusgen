@@ -37,7 +37,6 @@ with open('pvList.json', 'r') as f:
 startOffset = params["start_offset"]
 
 fullDB = ""
-pvs = []
 index = 0
 
 phoebusScreen = phoebusgen.screen.Screen("LLRF Digitizer")
