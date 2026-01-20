@@ -21,12 +21,12 @@ record(longin, "{pvReg}-I"){{
     return dbFile
 
 def writePhoebus(phoebusScreen, pvReg, index):
-    x = index*10
-    getWidget = phoebusgen.widget.TextEntry(f"readBack{index}", pvReg, 160, x, 100, 20)
+    x = index*30
+    getWidget = phoebusgen.widget.TextEntry(f"readBack{index}", pvReg, 820, x, 100, 20)
     getWidget.format("Hexadecimal")
-    setWidget = phoebusgen.widget.TextUpdate(f'input{index}', f"{pvReg}-I", 270, x, 100, 20)
+    setWidget = phoebusgen.widget.TextUpdate(f'input{index}', f"{pvReg}-I", 930, x, 100, 20)
     setWidget.format("Hexadecimal")
-    phoebusScreen.add_widget(phoebusgen.widget.Label(f"name{index}", pvReg, 10, x, 150, 20))
+    phoebusScreen.add_widget(phoebusgen.widget.Label(f"name{index}", pvReg, 10, x, 800, 20))
     phoebusScreen.add_widget(getWidget)
     phoebusScreen.add_widget(setWidget)
     return phoebusScreen

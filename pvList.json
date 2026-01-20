@@ -64,6 +64,7 @@
             "IQ_WNDCMP_LLIM",
             "REF_SLEW_LIMIT"
         ],
+        "count" : 2,
         "start_offset": 787072
     }
 }
