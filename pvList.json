@@ -66,5 +66,32 @@
         ],
         "count" : 2,
         "start_offset": 787072
+    },
+    "RDBK_REGS": {
+        "regs": [
+            "STATUS_REG",
+            "ADC_0_0_I",
+            "ADC_0_0_Q",
+            "ADC_0_0_M",
+            "ADC_0_0_P",
+            "ADC_0_0_ERROR_I_M",
+            "ADC_0_0_ERROR_Q_P",
+            "ADC_0_1_I",
+            "ADC_0_1_Q",
+            "ADC_0_1_M",
+            "ADC_0_1_P",
+            "ADC_0_1_ERROR_I_M",
+            "ADC_0_1_ERROR_Q_P",
+            "ADC_0_2_I",
+            "ADC_0_2_Q",
+            "ADC_0_2_M",
+            "ADC_0_2_P",
+            "ADC_0_3_I",
+            "ADC_0_3_Q",
+            "ADC_0_3_M",
+            "ADC_0_3_P"
+        ],
+        "count": 1,
+        "start_offset": 787328
     }
 }

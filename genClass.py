@@ -67,7 +67,15 @@ def main():
     address = params["FIELD_CONTROLLER"]["start_offset"]
     for i in range(params["FIELD_CONTROLLER"]["count"]):
         for param in params["FIELD_CONTROLLER"]["regs"]:
-            pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-FIELD_CONTROLLER_{i}-{param}'
+            pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-FC_{i}-{param}'
+            dbs.writeDb(pvReg, address)
+            dbs.writePhoebus(pvReg)
+            address += 4
+
+    address = params["RDBK_REGS"]["start_offset"]
+    for i in range(params["RDBK_REGS"]["count"]):
+        for param in params["RDBK_REGS"]["regs"]:
+            pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-RDBK_REGS{i}-{param}'
             dbs.writeDb(pvReg, address)
             dbs.writePhoebus(pvReg)
             address += 4
