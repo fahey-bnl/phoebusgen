@@ -26,6 +26,9 @@ for i in range(params["ADC"]["count"]):
     lblPhaseOffset = phoebusgen.widget.Label(f'lblADC{i}PhaseOffset', "Phi Offset", 10, 60, 75, 20)
     txtPhaseOffset = phoebusgen.widget.TextEntry(f'txtADC{i}PhaseOffset', f'ADC{i}_PHASE_INPUT', 80, 60, 80, 20)
 
+    lblGain = phoebusgen.widget.Label(f'lblADC{i}Gain', "Gain", 10, 90, 75, 20)
+    txtGain = phoebusgen.widget.TextEntry(f'txtADC{i}Gain', f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-ADC_CH{i}-ADC_GAIN', 80, 90, 80, 20)
+
     lblI = phoebusgen.widget.Label(f'lblADC{i}I', 'I', 10, 142, 20, 20)
     lblQ = phoebusgen.widget.Label(f'lblADC{i}Q', 'Q', 10, 172, 20, 20)
     lblM = phoebusgen.widget.Label(f'lblADC{i}M', 'M', 10, 202, 20, 20)
@@ -37,10 +40,10 @@ for i in range(params["ADC"]["count"]):
     txtQ = phoebusgen.widget.TextUpdate(f'txtADC{i}Q', f'$(P){{CPC:$(NO):DB$(DB)}}ADC_{i}_Q', 80, 172, 80, 20)
     txtM = phoebusgen.widget.TextUpdate(f'txtADC{i}M', f'$(P){{CPC:$(NO):DB$(DB)}}ADC_{i}_M', 80, 202, 80, 20)
     txtP = phoebusgen.widget.TextUpdate(f'txtADC{i}P', f'$(P){{CPC:$(NO):DB$(DB)}}ADC_{i}_P', 80, 232, 80, 20)
-    txtIErr = phoebusgen.widget.TextUpdate(f'txtADC{i}IErr', f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-RDBK_REGS0-ADC_0_{i}_ERROR_I-I', 80, 272, 80, 20)
-    txtQErr = phoebusgen.widget.TextUpdate(f'txtADC{i}QErr', f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-RDBK_REGS0-ADC_0_{i}_ERROR_Q-I', 80, 312, 80, 20)
+    txtIErr = phoebusgen.widget.TextUpdate(f'txtADC{i}IErr', f'$(P){{CPC:$(NO):DB$(DB)}}ADC_{i}_ERR_I', 80, 272, 80, 20)
+    txtQErr = phoebusgen.widget.TextUpdate(f'txtADC{i}QErr', f'$(P){{CPC:$(NO):DB$(DB)}}ADC_{i}_ERR_Q', 80, 312, 80, 20)
     
-    container.add_widget([btnOnOff, ledOnOff, lblPhaseOffset, txtPhaseOffset, lblI, txtI, lblQ, txtQ, lblIErr, txtIErr, lblQErr, txtQErr, lblM, txtM, lblP, txtP])
+    container.add_widget([btnOnOff, ledOnOff, lblPhaseOffset, txtPhaseOffset, lblGain, txtGain, lblI, txtI, lblQ, txtQ, lblIErr, txtIErr, lblQErr, txtQErr, lblM, txtM, lblP, txtP])
     phoebusScreen.add_widget(container)
 
 for i in range(params["DAC"]["count"]):

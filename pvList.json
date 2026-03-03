@@ -26,8 +26,7 @@
             "FREV_H",
             "FREV_L",
             "HNUM",
-            "PHI_OFFSET",
-            "LOCAL_GAIN"
+            "PHI_OFFSET"
         ],
         "count": 2,
         "start_offset": 786944
@@ -36,6 +35,7 @@
         "regs" : [
             "LOOP_EN",
             "IQ_OR_MP",
+            "LOCAL_OPERATION",
             "REF_I",
             "REF_Q",
             "REF_M",
@@ -62,7 +62,9 @@
             "OTFB_PHIEQ_DINT",
             "IQ_WNDCMP_ULIM",
             "IQ_WNDCMP_LLIM",
-            "REF_SLEW_LIMIT"
+            "REF_SLEW_LIMIT",
+            "PHI_ROT",
+            "LOCAL_GAIN"
         ],
         "count" : 2,
         "start_offset": 787072
@@ -93,5 +95,26 @@
         ],
         "count": 1,
         "start_offset": 787328
+    },
+    "ULR_MODULE": {
+        "regs": [
+            "CONTROL",
+            "STATUS",
+            "UL_TX"
+        ],
+        "PID": {
+            "regs": [
+                "ADDR",
+                "DATA"
+            ],
+            "count": 32
+        },
+        "EV": {
+            "regs": [
+                "EID"
+            ],
+            "count": 32
+        },
+        "start_offset": 787456
     }
 }

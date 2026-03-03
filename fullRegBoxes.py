@@ -67,4 +67,19 @@ for i in range(params["RDBK_REGS"]["count"]):
         tempY += 30
     phoebusScreen.add_widget(container)
 
+y += height + 10
+container = phoebusgen.widget.Group(f'ULRBase', 20, y, 410, (30*(len(params["ULR_MODULE"]["regs"])+2)))
+tempY = 10
+for reg in params["ULR_MODULE"]["regs"]:
+    lblParam = phoebusgen.widget.Label(f'UL{reg}', reg, 10, tempY, 140, 20)
+    inpParam = phoebusgen.widget.TextEntry(f'inpUL{reg}', f'$(P){{CPC:$(NO):DB$(DB)}}ULR_MODULE-{reg}', 162, tempY, 90, 20)
+    rbParam = phoebusgen.widget.TextUpdate(f'rbUL{reg}', f'$(P){{CPC:$(NO):DB$(DB)}}ULR_MODULE-{reg}-I', 262, tempY, 90, 20)
+    inpParam.format("Hexadecimal")
+    rbParam.format("Hexadecimal")
+    container.add_widget([lblParam, inpParam, rbParam])
+    tempY += 30
+    
+phoebusScreen.add_widget(container)
+container = phoebusgen.widget.Group(f'ULRPID', 440, y, 410, (30*(params["ULR_MODULE"]["PID"]["count"]+2)))
+
 phoebusScreen.write_screen("boxedScreen.bob")
