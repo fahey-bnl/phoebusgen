@@ -36,6 +36,8 @@
             "LOOP_EN",
             "IQ_OR_MP",
             "LOCAL_OPERATION",
+            "HL_READY_INVERT",
+            "HL_FFI_INVERT",
             "REF_I",
             "REF_Q",
             "REF_M",
@@ -67,7 +69,7 @@
             "LOCAL_GAIN"
         ],
         "count" : 2,
-        "start_offset": 787072
+        "start_offset": 787200
     },
     "RDBK_REGS": {
         "regs": [
@@ -94,7 +96,7 @@
             "ADC_0_3_P"
         ],
         "count": 1,
-        "start_offset": 787328
+        "start_offset": 787584
     },
     "ULR_MODULE": {
         "regs": [
@@ -115,6 +117,12 @@
             ],
             "count": 32
         },
-        "start_offset": 787456
+        "start_offset": 787968
+    },
+    "MISC_INPUT": {
+        "regs": [
+            "RDBK_UPDATE_RATE"
+        ],
+        "start_offset" : 787668
     }
 }
