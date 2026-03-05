@@ -109,12 +109,14 @@
                 "ADDR",
                 "DATA"
             ],
+            "start_offset": 787984,
             "count": 32
         },
         "EV": {
             "regs": [
                 "EID"
             ],
+            "start_offset": 788240,
             "count": 32
         },
         "start_offset": 787968

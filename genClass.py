@@ -86,12 +86,14 @@ def main():
         dbs.writeDb(pvReg, address)
         dbs.writePhoebus(pvReg)
         address += 4
+    address = params["ULR_MODULE"]["PID"]["start_offset"]
     for i in range(params["ULR_MODULE"]["PID"]["count"]):
         for param in params["ULR_MODULE"]["PID"]["regs"]:
             pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}ULR_MODULE-UL_DATA{i}-PID_{param}'
             dbs.writeDb(pvReg, address)
             dbs.writePhoebus(pvReg)
             address += 4
+    address = params["ULR_MODULE"]["EV"]["start_offset"]
     for i in range(params["ULR_MODULE"]["EV"]["count"]):
         for param in params["ULR_MODULE"]["EV"]["regs"]:
             pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}ULR_MODULE-UL_EV{i}-{param}'
