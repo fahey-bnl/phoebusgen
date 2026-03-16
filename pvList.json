@@ -15,7 +15,8 @@
             "CORDIC_PHI_OFFSET",
             "ADC_GAIN",
             "MAG_RDBK",
-            "PHI_RDBK"
+            "PHI_RDBK",
+            "INVERT_ACCUMULATOR"
         ],
         "count": 8,
         "start_offset": 786496
@@ -29,7 +30,7 @@
             "PHI_OFFSET"
         ],
         "count": 2,
-        "start_offset": 786944
+        "start_offset": 786976
     },
     "FIELD_CONTROLLER":{
         "regs" : [

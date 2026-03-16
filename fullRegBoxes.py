@@ -53,6 +53,21 @@ for i in range(params["FIELD_CONTROLLER"]["count"]):
     phoebusScreen.add_widget(container)
 
 y += height + 10
+height = 30*(len(params["RDBK_REGS"]["regs"])+2)
+for i in range(params["RDBK_REGS"]["count"]):
+    container = phoebusgen.widget.Group(f'FC{i}', 20 + i*420, y, 410, height)
+    tempY = 10
+    for reg in params["RDBK_REGS"]["regs"]:
+        lblParam = phoebusgen.widget.Label(f'FC{i}{reg}', reg, 10, tempY, 140, 20)
+        inpParam = phoebusgen.widget.TextEntry(f'inpFC{i}{reg}', f'$(P){{CPC:$(NO):DB$(DB)}}RDBK_REGS{i}-{reg}', 162, tempY, 90, 20)
+        rbParam = phoebusgen.widget.TextUpdate(f'rbFC{i}{reg}', f'$(P){{CPC:$(NO):DB$(DB)}}RDBK_REGS{i}-{reg}-I', 262, tempY, 90, 20)
+        inpParam.format("Hexadecimal")
+        rbParam.format("Hexadecimal")
+        container.add_widget([lblParam, inpParam, rbParam])
+        tempY += 30
+    phoebusScreen.add_widget(container)
+
+y += height + 10
 
 ulr = params["ULR_MODULE"]
 pid = ulr["PID"]
