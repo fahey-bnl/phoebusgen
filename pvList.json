@@ -67,7 +67,12 @@
             "IQ_WNDCMP_LLIM",
             "REF_SLEW_LIMIT",
             "PHI_ROT",
-            "LOCAL_GAIN"
+            "LOCAL_GAIN",
+            "REF_FFWD_EN",
+            "WNDCMP_EN",
+            "WNDCMP_HOLD_OFF_TIME",
+            "INTEGRATOR_ALPHA",
+            "FIELD_CONTROLLER_RESET"
         ],
         "count" : 2,
         "start_offset": 787200
@@ -94,7 +99,13 @@
             "ADC_0_3_I",
             "ADC_0_3_Q",
             "ADC_0_3_M",
-            "ADC_0_3_P"
+            "ADC_0_3_P",
+            "PI_0_KP_TERM_RDBK",
+            "PI_0_KI_TERM_RDBK",
+            "PI_0_TOTAL_TERM_RDBK",
+            "PI_1_KP_TERM_RDBK",
+            "PI_1_KI_TERM_RDBK",
+            "PI_1_TOTAL_TERM_RDBK"
         ],
         "count": 1,
         "start_offset": 787584
@@ -124,8 +135,20 @@
     },
     "MISC_INPUT": {
         "regs": [
-            "RDBK_UPDATE_RATE"
+            "RDBK_UPDATE_RATE",
+            "BRAM_DATA_SEL",
+            "BRAM_CONTROL",
+            "TEMP_REG_0",
+            "TEMP_REG_1",
+            "TEMP_REG_2",
+            "TEMP_REG_3",
+            "TEMP_REG_4",
+            "TEMP_REG_5",
+            "TEMP_REG_6",
+            "TEMP_REG_7",
+            "TEMP_REG_8",
+            "TEMP_REG_9"
         ],
-        "start_offset" : 787668
+        "start_offset" : 787712
     }
 }

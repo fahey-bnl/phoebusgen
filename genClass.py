@@ -101,6 +101,13 @@ def main():
             dbs.writePhoebus(pvReg)
             address += 4
 
+    address = params["MISC_INPUT"]["start_offset"]
+    for param in params["MISC_INPUT"]["regs"]:
+        pvReg = f'$(P){{CPC:$(NO):DB$(DB)}}APP_REGS-MISC_INPUT-{param}'
+        dbs.writeDb(pvReg, address)
+        dbs.writePhoebus(pvReg)
+        address += 4
+
     dbs.export("genClass.db", "genClass.bob")
 
 if __name__ == "__main__":
